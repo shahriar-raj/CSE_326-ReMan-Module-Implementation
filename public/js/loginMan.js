@@ -3,7 +3,7 @@
         try {
             // http://localhost:4201
             // reman.onrender.com
-            let response = await fetch('http://reman.onrender.com/doLoginMan', {
+            let response = await fetch('https://reman.onrender.com/doLoginMan', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -19,7 +19,7 @@
                 localStorage.clear();
                 localStorage.setItem('mid',result.mid);
                 localStorage.setItem('Name',result.Name);
-                window.location.replace("http://reman.onrender.com/manufacturer/showInventory");
+                window.location.replace("https://reman.onrender.com/manufacturer/showInventory");
             } else {
                 // Handle server error or validation errors
                 alert('Invalid Login!Please Try Again');
