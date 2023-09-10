@@ -13,11 +13,16 @@ async function doLoginMan(req, res){
     where "Email" = '${req.body.email}'   
     and "Password" = '${req.body.pass}';`
     try {
-        const allItems = await itemsPool.query(
+        const result = await itemsPool.query(
             sql
         );
-        if(allItems.rows.length==1){
-            res.status(200).send("OK");
+        if(result.rows.length==1){
+            const userObj = {
+                mid: result.rows[0].mid,
+                Name: result.rows[0].Name,
+            }
+            res.status(200);
+            res.json(userObj);
         }
         else{
             res.status(500).send("Invalid Credential");

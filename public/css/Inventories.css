@@ -14,6 +14,7 @@ button[type="jumbo_buttons"] {
 
 /* Add margin to create space between buttons */
 #jumbo-1 .container a + a {
+    position: absolute;
     margin-left: 50px; /* Adjust the margin size as needed */
 }
 
@@ -48,13 +49,24 @@ button[type="jumbo_buttons"] {
 }
 
 #inv-button {
+    position: relative;
     width: 1000px; /* Adjust the desired width */
     height: 100px; /* Adjust the desired height */
     text-align: left; /* Align the text to the left */
     
 }
 
+#aval{
+    left: 55%;
+}
+
+#lease{
+    position: relative;
+}
+
 .progress {
+    left: 70%;
+    position: relative;
     margin:20px auto;
     padding:0;
     width:20%;
@@ -65,9 +77,11 @@ button[type="jumbo_buttons"] {
 
   }
   
+  
   .bar {
-      position:relative;
+    position:relative;
     float:left;
+    
     min-width:1%;
     height:100%;
     background:cornflowerblue;

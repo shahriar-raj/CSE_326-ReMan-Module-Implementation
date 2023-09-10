@@ -2,7 +2,8 @@
      async function sendDataToServer(data) {
         try {
             // http://localhost:4201
-            const response = await fetch('https://reman.onrender.com/doLoginMan', {
+            // reman.onrender.com
+            let response = await fetch('http://reman.onrender.com/doLoginMan', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -12,7 +13,13 @@
 
             if (response.ok) {
                 // http://localhost:4201
-                window.location.replace("https://reman.onrender.com/manufacturer/showInventory");
+                // reman.onrender.com
+                let result = await response.json();
+
+                localStorage.clear();
+                localStorage.setItem('mid',result.mid);
+                localStorage.setItem('Name',result.Name);
+                window.location.replace("http://reman.onrender.com/manufacturer/showInventory");
             } else {
                 // Handle server error or validation errors
                 alert('Invalid Login!Please Try Again');
