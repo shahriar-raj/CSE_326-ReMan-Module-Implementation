@@ -8,7 +8,14 @@ function getManHomePage(req,res,next){
 }
 
 
+//* To get manufacturer's inventory page
+function getManInventory(req,res,next){
+    res.render("inventories.ejs");
+}
+
+
 //* Export 
 module.exports = {
     getManHomePage,
+    getManInventory,
 };

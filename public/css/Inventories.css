@@ -1,0 +1,138 @@
+.jumbotron {
+    padding: 6rem 2rem;
+}
+
+button[type="jumbo_buttons"] {
+    /* Increase the width and height */
+    width: 500px; 
+    height: 100px; 
+
+    /* Center-align text vertically and horizontally */
+    line-height: 50px; /* Should match the height for vertical centering */
+    text-align: center; /* For horizontal centering */
+}
+
+/* Add margin to create space between buttons */
+#jumbo-1 .container a + a {
+    margin-left: 50px; /* Adjust the margin size as needed */
+}
+
+.btn-outline-danger {
+    color: #E71385;
+    border-color: #E71385;
+}
+
+.btn-outline-danger:hover {
+    color: #fff;
+    background-color: #E71385;
+    border-color: #dc3545; 
+}
+
+#jumbo-2{
+    background-color: cadetblue;
+    margin-top: -90px;
+}
+
+.custom-button {
+    border-width: 3px; /* Adjust the thickness as needed */
+
+    position: absolute; /* Set the position to absolute */
+    top: 250px; /* Adjust the top position as needed */
+    left: 220px; /* Adjust the left position as needed */
+}
+
+#spanText{
+    position: absolute; /* Set the position to absolute */
+    top: 260px; /* Adjust the top position as needed */
+    left: 50px; /* Adjust the left position as needed */
+}
+
+#inv-button {
+    width: 1000px; /* Adjust the desired width */
+    height: 100px; /* Adjust the desired height */
+    text-align: left; /* Align the text to the left */
+    
+}
+
+.progress {
+    margin:20px auto;
+    padding:0;
+    width:25%;
+    height:25px;
+    overflow:hidden;
+    background:#d8d7d7a1;
+    border-radius:6px;
+  }
+  
+  .bar {
+      position:relative;
+    float:left;
+    min-width:1%;
+    height:100%;
+    background:cornflowerblue;
+  }
+  
+  .percent {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    margin:0;
+    font-family:tahoma,arial,helvetica;
+    font-size:15px;
+    color:rgb(252, 252, 252);
+  }
+
+  #inv-button .button-content {
+    display: inline-block;
+    vertical-align:bottom;
+}
+
+#inv-button .progress.right-aligned {
+    display: inline-block;
+    vertical-align:baseline;
+   
+    position: absolute; /* Set the position to absolute */
+    right: 300px; 
+}
+
+
+.button-content .ava {
+    margin-top: -70px; /* Adjust to move the .ava class upwards */
+
+    position: absolute; /* Set the position to absolute */
+    right: 650px;
+}
+
+#bar18 {
+  background:rgb(151, 14, 94);
+}
+
+#bar40 {
+  background:rgb(158, 172, 31);
+}
+
+#bar80 {
+    background:rgb(11, 158, 102);
+}
+
+
+.button-content .subscript {
+    margin-top: -15px; /* Adjust to move the elements upwards by 10 pixels */
+}
+
+.button-content .ava {
+    margin-top: -80px; /* Adjust to move the elements upwards by 10 pixels */
+}
+
+button[type="jumbo_buttons"] {
+    font-weight: bold; /* Make the text inside the buttons bold */
+}
+
+
+
+
+
+
+
+

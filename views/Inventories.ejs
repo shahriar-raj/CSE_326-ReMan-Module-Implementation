@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="css/Man_Home.css">
+    <link rel="stylesheet" type="text/css" href="css/Inventories.css">
+    
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus'></i>
+            <span class="logo_name">
+                <a href="/" class="logo" target="_blank">
+                    <img src="images/logo.jpg" alt="" height="115px">
+                </a>
+            </span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/player">
+                    <i class='bx bx-box'></i>
+                    <span class=""></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/player">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Notification</span>
+                </a>
+            </li>
+            <li>
+                <a href="/leaderboard">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Transaction History</span>
+                </a>
+            </li>
+            <li>
+                <a href="/team" class="active">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Inventory</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Production House</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/create_fixture">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Product List</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/update_fixture">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Data Analytics</span>
+                </a>
+            </li>
+            
+            <li> </li> <li> </li> <li> </li>
+            
+            <li class="profile_img">
+                <div class="profile-details">
+                    <img src="images/pepsi.jpg" alt="" width="100px">
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <p id="profile_name">P E P S I</p>
+            </li>
+            
+    
+            <li class="log_out">
+                <a href="/">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard > <span style="color: #E71385; font-weight: bold;">Inventory Management</span></span>
+            </div>
+        </nav>
+    
+        <div class="jumbotron jumbotron-fluid" id="jumbo-1">
+            <div class="container">
+                <a href="/">
+                    <button type="jumbo_buttons" class="btn btn-outline-danger"> Take Lease </button>
+                </a>
+                <a href="/">
+                    <button type="jumbo_buttons" class="btn btn-outline-danger">Give Lease</button>
+                </a>
+            </div>
+        </div> 
+
+
+        <div class="jumbotron jumbotron-fluid" id="jumbo-2">
+            <span style="color: #000000; font-size: 25px ; margin-right: 15px" id="spanText">Inventory List</span>
+            <a href="/">
+                <button type="button" class="btn btn-outline-dark mb-4 custom-button ">
+                    <img src="images/plus.svg" width="27px" height="30px">
+                </button>
+            </a>
+            
+            <div class="container">
+               
+                <ul id="inventory_list">
+                    <li>
+                        <a href="/">
+                            <button type="button" class="btn btn-outline-dark mb-4" id="inv-button">
+                                <div class="button-content">
+                                    <p style="font-weight: bold; font-size: x-large;"> INVENTORY 1 </p>
+                                    <p class="subscript" >Location :  Narayanganj </p>
+                                    <p class="subscript">Type :  Hot Storage </p>
+                                    <p class="ava"> Availability : </p> <!-- New line to add "Availability" text -->
+                                </div>
+                                <div class="progress right-aligned">
+                                    <div class="bar" style="width:18%" id="bar18">
+                                        <p class="percent">18%</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </a>
+                        
+                    </li>
+
+                    <li>
+                        <a href="/">
+                            <button type="button" class="btn btn-outline-dark mb-4" id="inv-button">
+                                <div class="button-content">
+                                    <p style="font-weight: bold; font-size: x-large;"> INVENTORY 2 </p>
+                                    <p class="subscript" >Location :  Gazipur </p>
+                                    <p class="subscript">Type :  Cold Storage </p>
+                                    <p class="ava"> Availability : </p> <!-- New line to add "Availability" text -->
+                                </div>
+                                <div class="progress right-aligned">
+                                    <div class="bar" style="width:45%" id="bar40">
+                                        <p class="percent">40%</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/">
+                            <button type="button" class="btn btn-outline-dark mb-4" id="inv-button">
+                                <div class="button-content">
+                                    <p style="font-weight: bold; font-size: x-large;"> INVENTORY 3 </p>
+                                    <p class="subscript" >Location :  Gazipur </p>
+                                    <p class="subscript">Type :  Cold Storage </p>
+                                    <p class="ava"> Availability : </p> <!-- New line to add "Availability" text -->
+                                </div>
+                                <div class="progress right-aligned">
+                                    <div class="bar" style="width:80%" id="bar80">
+                                        <p class="percent">80%</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+    
+    
+    
+        
+    </section>
+    
+    <!-- <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script> -->
+    
+    </body>
+</html>

@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 
 //* Internal Dependencies
-const {getManHomePage} = require("../../controller/manufacturer/manController");
+const {getManHomePage,getManInventory} = require("../../controller/manufacturer/manController");
 
 
 //* Create router
@@ -14,6 +14,7 @@ router.options('*',cors());
 
 //* Route setup
 router.get("/home",getManHomePage);
+router.get("/showInventory",getManInventory);
 
 
 //* Export

@@ -10,7 +10,7 @@
             });
 
             if (response.ok) {
-                window.location.replace("https://reman.onrender.com/manufacturer/home");
+                window.location.replace("https://reman.onrender.com/manufacturer/showInventory");
             } else {
                 // Handle server error or validation errors
                 alert('Invalid Login!Please Try Again');
