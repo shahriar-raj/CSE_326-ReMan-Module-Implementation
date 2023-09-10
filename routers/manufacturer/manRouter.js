@@ -11,6 +11,10 @@ const {getManHomePage,getManInventory} = require("../../controller/manufacturer/
 const router = express.Router();
 router.use(cors());
 router.options('*',cors());
+router.use(express.static(path.join(__dirname,"../../public")));     //^ Setting up static Folders
+router.use(express.static(path.join(__dirname,"../../public/js"))); 
+router.use(express.static(path.join(__dirname,"../../public/images"))); 
+router.use(express.static(path.join(__dirname,"../../public/css")));
 
 //* Route setup
 router.get("/home",getManHomePage);

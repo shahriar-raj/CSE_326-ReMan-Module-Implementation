@@ -57,11 +57,12 @@ button[type="jumbo_buttons"] {
 .progress {
     margin:20px auto;
     padding:0;
-    width:25%;
+    width:20%;
     height:25px;
     overflow:hidden;
     background:#d8d7d7a1;
     border-radius:6px;
+
   }
   
   .bar {
@@ -73,7 +74,7 @@ button[type="jumbo_buttons"] {
   }
   
   .percent {
-    position:absolute;
+    position:relative;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);

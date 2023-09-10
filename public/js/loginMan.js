@@ -1,6 +1,7 @@
      // Function to send data as JSON to the server
      async function sendDataToServer(data) {
         try {
+            // http://localhost:4201
             const response = await fetch('https://reman.onrender.com/doLoginMan', {
                 method: 'POST',
                 headers: {
@@ -10,6 +11,7 @@
             });
 
             if (response.ok) {
+                // http://localhost:4201
                 window.location.replace("https://reman.onrender.com/manufacturer/showInventory");
             } else {
                 // Handle server error or validation errors
