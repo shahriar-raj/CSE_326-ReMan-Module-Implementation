@@ -52,10 +52,19 @@ dotenv.config();
 //   }
 // })
 
+
+//* logout
+function logout(req, res) {
+    res.render('loginMan.ejs');
+}
+
+
+
+
 //* Routing Setup
 app.use("/",loginRouter);
 app.use("/manufacturer",manRouter);
-
+app.delete('/logout',logout);
 
 
 

@@ -9,13 +9,38 @@ function getManHomePage(req,res,next){
 
 
 //* To get manufacturer's inventory page
-function getManInventory(req,res,next){
+function getManInventoryPage(req,res,next){
     res.render("inventories.ejs");
+}
+
+
+//* To get the inventory lists of a specific manufacturer
+async function getInventoryList(req,res){
+    const sql = `SELECT *
+    FROM "Inventory", "Address"
+    WHERE "Inventory".mid = '${req.body.mid}' and "Address".rmish_id = "Inventory".iid;`;
+
+    try{
+        const result = await itemsPool.query(
+            sql
+        );
+        
+        console.log(result);
+        const userObj = {
+            rows: result.rows, 
+        }
+        res.status(200);
+        res.json(userObj);
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
 }
 
 
 //* Export 
 module.exports = {
     getManHomePage,
-    getManInventory,
+    getManInventoryPage,
+    getInventoryList,
 };

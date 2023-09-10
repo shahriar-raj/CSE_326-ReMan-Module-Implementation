@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 
 //* Internal Dependencies
-const {getManHomePage,getManInventory} = require("../../controller/manufacturer/manController");
+const {getManHomePage,getManInventoryPage,getInventoryList} = require("../../controller/manufacturer/manController");
 
 
 //* Create router
@@ -18,7 +18,8 @@ router.use(express.static(path.join(__dirname,"../../public/css")));
 
 //* Route setup
 router.get("/home",getManHomePage);
-router.get("/showInventory",getManInventory);
+router.get("/showInventory",getManInventoryPage);
+router.post("/getInventoryList",getInventoryList);
 
 
 //* Export

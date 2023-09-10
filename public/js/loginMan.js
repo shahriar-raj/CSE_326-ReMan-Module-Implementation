@@ -1,9 +1,13 @@
+// http://localhost:4201
+// https://reman.onrender.com   
+var link1 = `https://reman.onrender.com`;
+     
      // Function to send data as JSON to the server
      async function sendDataToServer(data) {
         try {
             // http://localhost:4201
             // reman.onrender.com
-            let response = await fetch('https://reman.onrender.com/doLoginMan', {
+            let response = await fetch(`${link1}/doLoginMan`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -19,7 +23,8 @@
                 localStorage.clear();
                 localStorage.setItem('mid',result.mid);
                 localStorage.setItem('Name',result.Name);
-                window.location.replace("https://reman.onrender.com/manufacturer/showInventory");
+                localStorage.setItem('Image',result.Image);
+                window.location.replace(`${link1}/manufacturer/showInventory`);
             } else {
                 // Handle server error or validation errors
                 alert('Invalid Login!Please Try Again');

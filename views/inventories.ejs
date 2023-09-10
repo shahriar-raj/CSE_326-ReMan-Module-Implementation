@@ -82,7 +82,7 @@
             
             <li class="profile_img">
                 <div class="profile-details">
-                    <img src="images/pepsi.jpg" alt="" width="100px">
+                    <img id = "logoImage" src="images/pepsi.jpg" alt="" width="100px">
                     <i class='bx bx-chevron-down'></i>
                 </div>
                 <p id="profile_name">P E P S I</p>
@@ -90,7 +90,7 @@
             
     
             <li class="log_out">
-                <a href="/">
+                <a onclick="logout()" href="">
                     <i class='bx bx-log-out'></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -195,6 +195,8 @@
         
     </section>
     
+    <script src="js/inventories.js"></script>
+
     <!-- <script>
         let sidebar = document.querySelector(".sidebar");
         let sidebarBtn = document.querySelector(".sidebarBtn");
