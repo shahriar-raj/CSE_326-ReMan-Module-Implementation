@@ -5,7 +5,7 @@ const cors = require('cors');
 
 
 //* Import Internal Dependencies
-const {getManLoginPage} = require("../../controller/loginController");
+const {getManLoginPage,doLoginMan} = require("../../controller/loginController");
 
 
 
@@ -17,6 +17,7 @@ router.options('*',cors());
 
 //* Route setup
 router.get("/",getManLoginPage);
+router.post("/doLoginMan",doLoginMan);
 
 
 //* Export

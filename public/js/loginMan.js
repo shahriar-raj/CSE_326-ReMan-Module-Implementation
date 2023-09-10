@@ -1,12 +1,7 @@
      // Function to send data as JSON to the server
      async function sendDataToServer(data) {
         try {
-
-            console.log(data.logemail);
-            console.log(data.logpass);
-
-
-            const response = await fetch('your-server-endpoint', {
+            const response = await fetch('https://reman.onrender.com/doLoginMan', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -15,11 +10,10 @@
             });
 
             if (response.ok) {
-                // Data sent successfully
-                alert('Login successful!');
+                window.location.replace("https://reman.onrender.com/manufacturer/home");
             } else {
                 // Handle server error or validation errors
-                alert('Error sending data to the server.');
+                alert('Invalid Login!Please Try Again');
             }
         } catch (error) {
             console.error('Error:', error);
@@ -35,8 +29,8 @@
         submitButton.addEventListener('click', async () => {
             // Retrieve form data
             const formData = {
-                logemail: document.getElementById('logemail').value,
-                logpass: document.getElementById('logpass').value,
+                email: document.getElementById('logemail').value,
+                pass: document.getElementById('logpass').value,
             };
 
             // Send the form data as JSON to the server

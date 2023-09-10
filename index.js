@@ -9,6 +9,7 @@ const path = require('path');
 //* Import Internal Dependencies
 const itemsPool = require('./database/dbConnection');   //^ Db Connection
 const loginRouter = require('./routers/login/loginRouter');
+const manRouter = require('./routers/manufacturer/manRouter');
 
 
 //* App Helpers
@@ -53,6 +54,7 @@ dotenv.config();
 
 //* Routing Setup
 app.use("/",loginRouter);
+app.use("/manufacturer",manRouter);
 
 
 
