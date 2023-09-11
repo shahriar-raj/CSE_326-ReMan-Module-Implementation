@@ -5,6 +5,14 @@ var link1 = `https://reman.onrender.com`;
 
 
 
+async function clickedOnInventory(button){
+    let iid = button.getAttribute("data-info");
+    localStorage.setItem('iid',iid);
+    window.location.replace(`${link1}/manufacturer/getSingleInventoryView`);
+}
+
+
+
 async function logout(){
     // http://localhost:4201
     // reman.onrender.com
@@ -46,8 +54,8 @@ async function initializeInventoryList(){
     for(let i=0; i<result.rows.length; i++){
 
         let newChild = document.createElement('li');
-        newChild.innerHTML = `<a href="/">
-        <button type="button" class="btn btn-outline-dark mb-4" id="inv-button">
+        newChild.innerHTML = `
+        <button type="button" class="btn btn-outline-dark mb-4" id="inv-button" data-info="${result.rows[i].iid}" onclick="clickedOnInventory(this)">
             <div class="button-content">
                 <p style="font-weight: bold; font-size: x-large;"> ${result.rows[i].Name} </p>
                 <p class="subscript" >Location :  ${result.rows[i].City} </p>
@@ -60,12 +68,10 @@ async function initializeInventoryList(){
                 </div>
             </div>
         </button>
-    </a>`;
+    `;
 
         // Append the new child element to the parent element
         inventory_list.appendChild(newChild);
-
-        console.log(result.rows[i].iid);
     }
 }
 

@@ -38,9 +38,42 @@ async function getInventoryList(req,res){
 }
 
 
+
+//* Get single inventory view page
+function getSingleInventoryViewPage(req,res){
+    res.render("singleInventoryView.ejs");
+}
+
+
+
+//* Get product list and info by inventory
+async function getProductByInventory(req,res){
+    const sql = `SELECT "Product"."pid", "Product"."Name", "Product"."Category_Name", "Product"."Image", "Product"."Unit Price", "Product"."Rating", "Product"."Weight/Volume", SUM("Batch"."ManufacturingQuantity") AS "TotalQuantity"
+    FROM "Product" INNER JOIN "Batch" ON
+    "Product"."pid" = "Batch"."pid" and "Batch"."IID/HID" = '${req.body.iid}'
+    GROUP BY "Product"."pid"`;
+    try{
+        const result = await itemsPool.query(
+            sql
+        );
+        
+        console.log(result);
+        const userObj = {
+            rows: result.rows, 
+        }
+        res.status(200);
+        res.json(userObj);
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
 //* Export 
 module.exports = {
     getManHomePage,
     getManInventoryPage,
     getInventoryList,
+    getSingleInventoryViewPage,
+    getProductByInventory,
 };
