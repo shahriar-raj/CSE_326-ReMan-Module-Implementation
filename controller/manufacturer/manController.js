@@ -72,7 +72,7 @@ async function getProductByInventory(req,res){
 
 
 //* get category list by IID
-async function getCategoryByIID(req){
+async function getCategoryByIID(req,res){
     const sql = `SELECT DISTINCT "Product"."Category_Name"
     FROM "Product" INNER JOIN "Inventory" ON
     "Product"."mid" = "Inventory"."mid" and "Inventory"."iid" = '${req.body.iid}';`;
