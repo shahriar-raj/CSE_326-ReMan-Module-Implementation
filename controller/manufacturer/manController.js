@@ -25,7 +25,7 @@ async function getInventoryList(req,res){
             sql
         );
         
-        console.log(result);
+        //console.log(result);
         const userObj = {
             rows: result.rows, 
         }
@@ -229,6 +229,88 @@ async function getEmptyProductionHouseCount(req,res){
 }
 
 
+//* Get batch list of a specific product
+function getBatchListPage(req,res){
+    res.render("batchList.ejs");
+}
+
+
+
+//* Get Batch List of a specific product
+async function getBatchListByPID_IID(req,res){
+    // const sql = `SELECT "Batch"."bid", "Product"."Name", "Product"."Category_Name", "Product"."Image", "Product"."Unit Price", "Product"."Weight/Volume", "Batch"."ManufacturingQuantity", "Batch"."ExpiryDate", "Batch"."ManufacturingDate",
+    // CASE
+    //    WHEN "Batch"."ManufacturingDate" > Date('2022-07-30') THEN 'Fresh'
+    //    WHEN "Batch"."ManufacturingDate" > Date('2022-05-30') THEN 'Moderate'
+    //    ELSE 'Critical'
+    // END AS "BatchState"
+    // FROM "Product" INNER JOIN "Batch" ON
+    // "Product"."pid" = "Batch"."pid" and "Batch"."IID/HID" = '${req.body.iid}' and "Product"."pid" = '${req.body.pid}';`;
+
+    const sql = `SELECT "Batch"."bid", "Product"."Name", "Product"."Category_Name", "Product"."Image", "Product"."Unit Price", "Product"."Weight/Volume", "Batch"."ManufacturingQuantity", "Batch"."ExpiryDate", "Batch"."ManufacturingDate",
+    CASE
+       WHEN "Batch"."ManufacturingDate" > Date('2023-02-24') THEN 'Fresh'
+       WHEN "Batch"."ManufacturingDate" > Date('2022-11-14') THEN 'Moderate'
+       ELSE 'Critical'
+    END AS "BatchState"
+    FROM "Product" INNER JOIN "Batch" ON
+    "Product"."pid" = "Batch"."pid" and "Batch"."IID/HID" = '${req.body.iid}' and "Product"."pid" = '${req.body.pid}'
+    ORDER BY "Batch"."ManufacturingDate";`;
+    try{
+        const result = await itemsPool.query(
+            sql
+        );
+        
+        console.log(result);
+        const userObj = {
+            rows: result.rows, 
+        }
+        res.status(200);
+        res.json(userObj);
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
+
+
+//* Add to the shifting cart
+async function addToShiftingCart(req,res){
+    try{
+        for(let i=0; i<req.body.bidL.length; i++){
+            const sql = `INSERT INTO "ShiftCart" (iid, bid) VALUES (${req.body.iid}, ${req.body.bidL[i]});`;
+            let result = await itemsPool.query(
+                sql
+            );
+        }
+        res.status(200).send("OK");
+       
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
+
+//* Add To MarketPlace
+async function addToMarketPlace(req,res){
+    try{
+        for(let i=0; i<req.body.bidL.length; i++){
+            const sql = `UPDATE "Batch" SET "InMarketPlace" = true WHERE bid = ${req.body.bidL[i]};`;
+            let result = await itemsPool.query(
+                sql
+            );
+        }
+        res.status(200).send("OK");
+       
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
+
 
 //* Export 
 module.exports = {
@@ -244,4 +326,8 @@ module.exports = {
     getEmptyInventoryCount,
     getAllProductionHouseCount,
     getEmptyProductionHouseCount,
+    getBatchListPage,
+    getBatchListByPID_IID,
+    addToShiftingCart,
+    addToMarketPlace
 };

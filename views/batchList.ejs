@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="css/Man_Home.css">
+    <link rel="stylesheet" type="text/css" href="css/batchList.css">
+    
+    
+
+</head>
+<body>
+
+    
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus'></i>
+            <span class="logo_name">
+                <a href="/" class="logo" target="_blank">
+                    <img src="images/logo.jpg" alt="" height="115px">
+                </a>
+            </span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/player">
+                    <i class='bx bx-box'></i>
+                    <span class=""></span>
+                </a>
+            </li>
+            <li>
+                <a href="/manufacturer/home">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/player">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Notification</span>
+                </a>
+            </li>
+            <li>
+                <a href="/leaderboard">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Transaction History</span>
+                </a>
+            </li>
+            <li>
+                <a href="/manufacturer/showInventory" class="active">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Inventory</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Production House</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/create_fixture">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Product List</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/update_fixture">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Data Analytics</span>
+                </a>
+            </li>
+            
+            <li> </li> <li> </li> <li> </li>
+            
+            <li class="profile_img">
+                <div class="profile-details">
+                    <img id = "logoImage" src="images/pepsi.jpg" alt="" width="100px">
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <p id="profile_name">P E P S I</p>
+            </li>
+            
+    
+            <li class="log_out" onclick="logout()">
+                <a href="/">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <section class="home-section">
+        <div>
+            <div>
+                <nav>
+                    <div class="sidebar-button">
+                        <i class='bx bx-menu sidebarBtn'></i>
+                        <span class="dashboard text-muted">Dashboard  >  Inventory > Inventory Details > <span style="color: #E71385; font-weight: bold;">  Batch List  </span></span>
+                    </div>
+                </nav>
+            </div>
+    
+            <div class="jumbotron jumbotron-fluid" id="jumbo-2">
+                <p style=" color: #FFFFFF;">.</p>
+
+                
+                <span style="color: #000000; font-size: 18px ; margin-right:10px; margin-left:30px " class="inv-info" id = "inventory_name"> Inventory X </span><br>
+                <span style="color: #000000; font-size: 18px ; margin-right:10px; margin-left:30px " class="inv-info" id="location"> Location : Gazipur </span><br>
+                <span style="color: #000000; font-size: 18px ; margin-right:10px; margin-left:30px " class="inv-info" id="type"> Storage Type : Cold Storage </span><br>
+                <br>
+                <span style="color: #000000; font-size: 18px ; margin-right:10px; margin-left:30px " class="inv-info" > Now showing the available batches of  </span><br>
+                <span style="color: #000000; font-size: 25px ; margin-right:10px; margin-left:30px " class="inv-info font-weight-bold" id = "up1"> Product Name : MTN DEW  </span><br>
+
+                
+                
+
+
+
+
+
+                <div class="container">
+                    <br>
+                    <div class="row">
+                            <div class="col-12">
+                                
+                                <div class="card card-margin">
+                                    <div class="card-body">
+
+                                        <div class="row search-body">
+                                            <div class="col-lg-12">
+                                                <div class="search-result">
+                                                    <div class="result-header">
+                                                        <div class="row">
+                                                           
+                                                            <div class="col-lg-6">
+                                                                <div class="result-actions">
+                                                                    <div class="result-sorting">
+                                                                        <span>Sorted By:</span>
+                                                                        <select class="form-control border-0" id="exampleOption">
+                                                                            <option value="1">Expirity Date</option>   
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="result-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table widget-26">
+                                                                <tbody id="product_list">
+                                                                    
+                                                                    <tr>
+                                                                        
+                                                                        <td>
+                                                                            <div class="widget-26-job-emp-img">
+                                                                                <img src="images/batchIcon.jpg" alt="Company" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-bold">AZ-845KL</span>
+                                                                                <p class="m-0"><span class="text-muted time">Batch No.</span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-normal">Mountain Dew</span>
+                                                                                <p class="m-0"><span class="text-muted time">Product Name</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text font-weight-normal"> 250 mL </span>
+                                                                                <p class="m-0"><span class="text-muted time">Unit Quantity</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                    
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text font-weight-normal"> 20'000 </span>
+                                                                                <p class="m-0"><span class="text-muted time">Quantity</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-normal">DEC-2023</span>
+                                                                                <p class="m-0"><span class="text-muted time">Expire Date</span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <!-- if else cases -->
+                                                                            <div class="widget-26-job-category bg-soft-warning">
+                                                                                <i class="indicator bg-warning"></i>
+                                                                                <span> Moderate</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <div class="custom-control custom-switch">
+                                                                    
+                                                                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                                                                </div>
+                                                                                <p class="m-0"><span class="text-muted time">Selected </span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+
+
+
+                                                                    <tr>
+                                                                        
+                                                                        <td>
+                                                                            <div class="widget-26-job-emp-img">
+                                                                                <img src="images/batchIcon.jpg" alt="Company" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-bold">AZ-845KL</span>
+                                                                                <p class="m-0"><span class="text-muted time">Batch No.</span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-normal">Mountain Dew</span>
+                                                                                <p class="m-0"><span class="text-muted time">Product Name</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text font-weight-normal"> 250 mL </span>
+                                                                                <p class="m-0"><span class="text-muted time">Unit Quantity</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                    
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text font-weight-normal"> 20'000 </span>
+                                                                                <p class="m-0"><span class="text-muted time">Quantity</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-normal">DEC-2023</span>
+                                                                                <p class="m-0"><span class="text-muted time">Expire Date</span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <!-- if else cases -->
+                                                                            <div class="widget-26-job-category bg-soft-danger">
+                                                                                <i class="indicator bg-danger"></i>
+                                                                                <span> Critial  </span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <div class="custom-control custom-switch">
+                                                                    
+                                                                                    <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                                                                                    <label class="custom-control-label" for="customSwitch2"></label>
+                                                                                </div>
+                                                                                <p class="m-0"><span class="text-muted time">Selected </span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+
+                                                                    
+
+                                                                    <tr>
+                                                                        
+                                                                        <td>
+                                                                            <div class="widget-26-job-emp-img">
+                                                                                <img src="images/batchIcon.jpg" alt="Company" />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-bold">AZ-845KL</span>
+                                                                                <p class="m-0"><span class="text-muted time">Batch No.</span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-normal">Mountain Dew</span>
+                                                                                <p class="m-0"><span class="text-muted time">Product Name</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text font-weight-normal"> 250 mL </span>
+                                                                                <p class="m-0"><span class="text-muted time">Unit Quantity</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                    
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text font-weight-normal"> 20'000 </span>
+                                                                                <p class="m-0"><span class="text-muted time">Quantity</span></p>
+                                                                            </div>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <span class="text-dark font-weight-normal">DEC-2023</span>
+                                                                                <p class="m-0"><span class="text-muted time">Expire Date</span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <!-- if else cases -->
+                                                                            <div class="widget-26-job-category bg-soft-success">
+                                                                                <i class="indicator bg-success"></i>
+                                                                                <span> Critial  </span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="widget-26-job-info">
+                                                                                <div class="custom-control custom-switch">
+                                                                    
+                                                                                    <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                                                                                    <label class="custom-control-label" for="customSwitch3"></label>
+                                                                                </div>
+                                                                                <p class="m-0"><span class="text-muted time">Selected </span></p>
+                                                                            </div>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="col-3"></div>
+                                        <div class="col-4 align-self-start mb-3"> <!-- Added align-self-start class -->
+                                            
+                                            <button class="btn btn-light btn-outline-dark" onclick="shift()"><i class="fa fa-solid fa-truck"></i> | Add to Shifting Cart</button>
+                                            
+                                        </div>
+                                       
+                                        <div class="col-4 align-self-start mb-3"> <!-- Added align-self-start class -->
+                                            
+                                            <button class="btn btn-light btn-outline-dark" onclick="addToMarketPlace()"><i class="fa fa-solid fa-building"></i> | Add To Marketplace</button>
+                                            
+                                        </div>
+                                      </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                
+
+
+
+                
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+        </div>
+    </section>
+    
+    <!-- <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script> -->
+    <script src="js/batchList.js"></script>
+    </body>
+</html>

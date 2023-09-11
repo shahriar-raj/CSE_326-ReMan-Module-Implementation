@@ -52,7 +52,8 @@ async function init(){
 
 function clickProduct(element){
     let pid = element.getAttribute("data-info");
-    console.log(pid);
+    localStorage.setItem('pid',pid);
+    window.location.replace(`${link1}/manufacturer/getBatchListPage`);
 }
 
 
