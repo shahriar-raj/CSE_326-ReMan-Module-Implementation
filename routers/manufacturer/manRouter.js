@@ -10,6 +10,12 @@ const {getManHomePage,
     getSingleInventoryViewPage,
     getProductByInventory,
     getCategoryByIID,
+    getCategoryProductCount,
+    getCategoryProductCountInMarketPlace,
+    getAllInventoryCount,
+    getEmptyInventoryCount,
+    getAllProductionHouseCount,
+    getEmptyProductionHouseCount
     } = require("../../controller/manufacturer/manController");
 
 
@@ -32,6 +38,12 @@ router.get("/getSingleInventoryView",getSingleInventoryViewPage);
 router.post("/getInventoryList",getInventoryList);
 router.post("/getProductByInventory",getProductByInventory);
 router.post("/getCategoryByIID",getCategoryByIID);
+router.post("/getCategoryProductCount",getCategoryProductCount);
+router.post("/getCategoryProductCountInMarketPlace",getCategoryProductCountInMarketPlace);
+router.post("/getAllInventoryCount",getAllInventoryCount);
+router.post("/getEmptyInventoryCount",getEmptyInventoryCount);
+router.post("/getAllProductionHouseCount",getAllProductionHouseCount);
+router.post("/getEmptyProductionHouseCount",getEmptyProductionHouseCount);
 
 
 
