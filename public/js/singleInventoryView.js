@@ -204,7 +204,7 @@ async function fetchProduct(){
             category.removeChild(category.firstChild);
         }
 
-        category.innerHTML += `<option>none</option>`;
+        category.innerHTML += `<option>category</option>`;
         for(let i=0; i<result.rows.length; i++){
             category.innerHTML += `<option>${result.rows[i].Category_Name}</option>`;
         }
@@ -219,7 +219,7 @@ async function fetchProduct(){
         let cat = category.options[selectedIndex].value;
         let srch = search.value;
 
-        if(srch == '' && cat == "none"){
+        if(srch == '' && cat == "category"){
             alert('Search field is empty!');
         }
         else if(srch == ''){
