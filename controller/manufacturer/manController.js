@@ -57,6 +57,30 @@ async function getProductByInventory(req,res){
             sql
         );
         
+        //console.log(result);
+        const userObj = {
+            rows: result.rows, 
+        }
+        res.status(200);
+        res.json(userObj);
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
+
+
+//* get category list by IID
+async function getCategoryByIID(req){
+    const sql = `SELECT DISTINCT "Product"."Category_Name"
+    FROM "Product" INNER JOIN "Inventory" ON
+    "Product"."mid" = "Inventory"."mid" and "Inventory"."iid" = '${req.body.iid}';`;
+    try{
+        const result = await itemsPool.query(
+            sql
+        );
+        
         console.log(result);
         const userObj = {
             rows: result.rows, 
@@ -76,4 +100,5 @@ module.exports = {
     getInventoryList,
     getSingleInventoryViewPage,
     getProductByInventory,
+    getCategoryByIID,
 };

@@ -1,7 +1,7 @@
 // http://localhost:4201
 // https://reman.onrender.com   
 
-var link1 = `https://reman.onrender.com`;
+var link1 = `http://localhost:4201`;
      
      // Function to send data as JSON to the server
      async function sendDataToServer(data) {

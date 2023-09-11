@@ -9,6 +9,7 @@ const {getManHomePage,
     getInventoryList,
     getSingleInventoryViewPage,
     getProductByInventory,
+    getCategoryByIID,
     } = require("../../controller/manufacturer/manController");
 
 
@@ -30,6 +31,8 @@ router.get("/getSingleInventoryView",getSingleInventoryViewPage);
 // ? POST METHODS
 router.post("/getInventoryList",getInventoryList);
 router.post("/getProductByInventory",getProductByInventory);
+router.post("/getCategoryByIID",getCategoryByIID);
+
 
 
 //* Export
