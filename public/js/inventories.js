@@ -63,7 +63,7 @@ async function initializeInventoryList(){
                 <p class="ava" id="aval"> Availability: </p> <!-- New line to add "Availability" text -->
             </div>
             <div class="progress right-aligned">
-                <div class="bar" style="width:80%" id="bar80">
+                <div class="bar" style="width:69%" id="bar80">
                     <p class="percent">80%</p>
                 </div>
             </div>

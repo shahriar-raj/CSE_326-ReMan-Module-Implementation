@@ -30,7 +30,7 @@ button[type="jumbo_buttons"] {
 }
 
 #jumbo-2{
-    background-color: cadetblue;
+    background-color: #e4e2e2;
     margin-top: -90px;
 }
 
@@ -144,6 +144,9 @@ button[type="jumbo_buttons"] {
     font-weight: bold; /* Make the text inside the buttons bold */
 }
 
+.home-section {
+    background-color: #e4e2e2;
+}
 
 
 
