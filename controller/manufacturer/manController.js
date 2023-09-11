@@ -81,7 +81,7 @@ async function getCategoryByIID(req,res){
             sql
         );
         
-        console.log(result);
+        //console.log(result);
         const userObj = {
             rows: result.rows, 
         }

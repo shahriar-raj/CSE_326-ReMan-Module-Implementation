@@ -54,21 +54,63 @@ async function initializeInventoryList(){
     for(let i=0; i<result.rows.length; i++){
 
         let newChild = document.createElement('li');
-        newChild.innerHTML = `
-        <button type="button" class="btn btn-outline-dark mb-4" id="inv-button" data-info="${result.rows[i].iid}" onclick="clickedOnInventory(this)">
-            <div class="button-content">
-                <p style="font-weight: bold; font-size: x-large;"> ${result.rows[i].Name} </p>
-                <p class="subscript" >Location :  ${result.rows[i].City} </p>
-                <p class="subscript">Type :  ${result.rows[i].Type} </p>
-                <p class="ava" id="aval"> Availability: </p> <!-- New line to add "Availability" text -->
-            </div>
-            <div class="progress right-aligned">
-                <div class="bar" style="width:69%" id="bar80">
-                    <p class="percent">80%</p>
+
+        let availability = Number(result.rows[i].Availability);
+
+        if(availability >= 0 && availability <= 18){
+            newChild.innerHTML = `
+            <button type="button" class="btn btn-outline-dark mb-4" id="inv-button" data-info="${result.rows[i].iid}" onclick="clickedOnInventory(this)">
+                <div class="button-content">
+                    <p style="font-weight: bold; font-size: x-large;"> ${result.rows[i].Name} </p>
+                    <p class="subscript" >Location :  ${result.rows[i].City} </p>
+                    <p class="subscript">Type :  ${result.rows[i].Type} </p>
+                    <p class="ava" id="aval"> Availability: </p> <!-- New line to add "Availability" text -->
                 </div>
-            </div>
-        </button>
-    `;
+                <div class="progress right-aligned">
+                    <div class="bar" style="width:${availability}%" id="bar18">
+                        <p class="percent">${result.rows[i].Availability}%</p>
+                    </div>
+                </div>
+            </button>
+        `;
+        }
+        else if (availability >= 19 && availability <= 40){
+            newChild.innerHTML = `
+            <button type="button" class="btn btn-outline-dark mb-4" id="inv-button" data-info="${result.rows[i].iid}" onclick="clickedOnInventory(this)">
+                <div class="button-content">
+                    <p style="font-weight: bold; font-size: x-large;"> ${result.rows[i].Name} </p>
+                    <p class="subscript" >Location :  ${result.rows[i].City} </p>
+                    <p class="subscript">Type :  ${result.rows[i].Type} </p>
+                    <p class="ava" id="aval"> Availability: </p> <!-- New line to add "Availability" text -->
+                </div>
+                <div class="progress right-aligned">
+                    <div class="bar" style="width:${availability}%" id="bar40">
+                        <p class="percent">${result.rows[i].Availability}%</p>
+                    </div>
+                </div>
+            </button>
+        `;
+
+        }
+        else{
+            newChild.innerHTML = `
+            <button type="button" class="btn btn-outline-dark mb-4" id="inv-button" data-info="${result.rows[i].iid}" onclick="clickedOnInventory(this)">
+                <div class="button-content">
+                    <p style="font-weight: bold; font-size: x-large;"> ${result.rows[i].Name} </p>
+                    <p class="subscript" >Location :  ${result.rows[i].City} </p>
+                    <p class="subscript">Type :  ${result.rows[i].Type} </p>
+                    <p class="ava" id="aval"> Availability: </p> <!-- New line to add "Availability" text -->
+                </div>
+                <div class="progress right-aligned">
+                    <div class="bar" style="width:${availability}%" id="bar80">
+                        <p class="percent">${result.rows[i].Availability}%</p>
+                    </div>
+                </div>
+            </button>
+        `;
+        }
+
+        
 
         // Append the new child element to the parent element
         inventory_list.appendChild(newChild);
