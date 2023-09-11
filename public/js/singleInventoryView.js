@@ -14,6 +14,8 @@ async function init(){
     man_name.innerHTML = localStorage.getItem('Name');
 
 
+
+
     //* Fetch inventory info first
     let data = {
         mid: localStorage.getItem('mid'),
@@ -35,6 +37,9 @@ async function init(){
             let inventory_name = document.getElementById('inventory_name');
             let location = document.getElementById('location');
             let type = document.getElementById('type');
+
+            let top_name = document.getElementById('top_name');
+            top_name.innerHTML = inventory_name;
 
 
             inventory_name.innerHTML = `${result.rows[i].Name}`;
