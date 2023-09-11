@@ -194,6 +194,10 @@ async function init(){
 
 
 async function shift(){
+    if(bidList.length == 0){
+        alert('Selected List is Empty!');
+        return;
+    }
     console.log(bidList);
     let data = {
         iid: localStorage.getItem('iid'),
@@ -220,6 +224,10 @@ async function shift(){
 
 
 async function addToMarketPlace(){
+    if(bidList.length == 0){
+        alert('Selected List is Empty!');
+        return;
+    }
     console.log(bidList);
     let data = {
         iid: localStorage.getItem('iid'),
