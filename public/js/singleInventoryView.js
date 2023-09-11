@@ -38,8 +38,8 @@ async function init(){
             let location = document.getElementById('location');
             let type = document.getElementById('type');
 
-            let top_name = document.getElementById('top_name');
-            top_name.innerHTML = inventory_name;
+            // let top_name = document.getElementById('top_name');
+            // top_name.innerHTML = inventory_name;
 
 
             inventory_name.innerHTML = `${result.rows[i].Name}`;
