@@ -25,7 +25,7 @@ var link1 = `https://reman.onrender.com`;
                 localStorage.setItem('mid',result.mid);
                 localStorage.setItem('Name',result.Name);
                 localStorage.setItem('Image',result.Image);
-                window.location.replace(`${link1}/manufacturer/showInventory`);
+                window.location.replace(`${link1}/manufacturer/home`);
             } else {
                 // Handle server error or validation errors
                 alert('Invalid Login!Please Try Again');
