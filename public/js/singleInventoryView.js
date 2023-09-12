@@ -6,6 +6,13 @@ var link1 = `https://reman.onrender.com`;
 var products;
 
 
+
+function goToShiftCart(){
+    console.log("Goooooo");
+    window.location.replace(`${link1}/manufacturer/getShiftingCartPage`);
+}
+
+
 async function init(){
     let image = document.getElementById('logoImage');
     image.src = localStorage.getItem('Image');

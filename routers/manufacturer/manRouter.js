@@ -19,7 +19,9 @@ const {getManHomePage,
     getBatchListPage,
     getBatchListByPID_IID,
     addToShiftingCart,
-    addToMarketPlace
+    addToMarketPlace,
+    getShiftingCartPage,
+    getShiftingCartInfo
     } = require("../../controller/manufacturer/manController");
 
 
@@ -38,6 +40,7 @@ router.get("/home",getManHomePage);
 router.get("/showInventory",getManInventoryPage);
 router.get("/getSingleInventoryView",getSingleInventoryViewPage);
 router.get("/getBatchListPage",getBatchListPage);
+router.get("/getShiftingCartPage",getShiftingCartPage);
 
 // ? POST METHODS
 router.post("/getInventoryList",getInventoryList);
@@ -52,6 +55,7 @@ router.post("/getEmptyProductionHouseCount",getEmptyProductionHouseCount);
 router.post("/getBatchListByPID_IID",getBatchListByPID_IID);
 router.post("/addToShiftingCart",addToShiftingCart);
 router.post("/addToMarketPlace",addToMarketPlace);
+router.post("/getShiftingCartInfo",getShiftingCartInfo);
 
 
 

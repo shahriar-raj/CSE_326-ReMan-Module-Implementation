@@ -261,7 +261,7 @@ async function getBatchListByPID_IID(req,res){
             sql
         );
         
-        console.log(result);
+        //console.log(result);
         const userObj = {
             rows: result.rows, 
         }
@@ -312,6 +312,47 @@ async function addToMarketPlace(req,res){
 
 
 
+//* Get Shifting Cart Page
+function getShiftingCartPage(req,res){
+    res.render("shiftingCart.ejs");
+}
+
+
+
+
+//* Get Shifting Cart Info
+async function getShiftingCartInfo(req,res){
+    const sql = `SELECT "Batch"."bid", "Product"."Name", "Product"."Category_Name", "Product"."Image", "Product"."Unit Price", "Product"."Weight/Volume", "Batch"."ManufacturingQuantity", "Batch"."ExpiryDate", "Batch"."ManufacturingDate",
+    CASE
+       WHEN "Batch"."ManufacturingDate" > Date('2023-02-24') THEN 'Fresh'
+       WHEN "Batch"."ManufacturingDate" > Date('2022-11-14') THEN 'Moderate'
+       ELSE 'Critical'
+    END AS "BatchState"
+    FROM (("Batch"
+    INNER JOIN "ShiftCart" ON "ShiftCart"."bid" = "Batch"."bid")
+    INNER JOIN "Product" ON "Product"."pid" = "Batch"."pid")
+    WHERE "ShiftCart"."iid" = ${req.body.iid}
+    ORDER BY "Batch"."ManufacturingDate";`;
+    try{
+        const result = await itemsPool.query(
+            sql
+        );
+        
+        console.log(result);
+        const userObj = {
+            rows: result.rows, 
+        }
+        res.status(200);
+        res.json(userObj);
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
+
+
+
 //* Export 
 module.exports = {
     getManHomePage,
@@ -329,5 +370,7 @@ module.exports = {
     getBatchListPage,
     getBatchListByPID_IID,
     addToShiftingCart,
-    addToMarketPlace
+    addToMarketPlace,
+    getShiftingCartPage,
+    getShiftingCartInfo,
 };
