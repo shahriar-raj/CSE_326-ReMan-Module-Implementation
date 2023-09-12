@@ -21,7 +21,10 @@ const {getManHomePage,
     addToShiftingCart,
     addToMarketPlace,
     getShiftingCartPage,
-    getShiftingCartInfo
+    getShiftingCartInfo,
+    getSelectInventoryToShiftPage,
+    getAllInventoriesExceptOne,
+    shiftToOtherInventory
     } = require("../../controller/manufacturer/manController");
 
 
@@ -41,6 +44,7 @@ router.get("/showInventory",getManInventoryPage);
 router.get("/getSingleInventoryView",getSingleInventoryViewPage);
 router.get("/getBatchListPage",getBatchListPage);
 router.get("/getShiftingCartPage",getShiftingCartPage);
+router.get("/getSelectInventoryToShiftPage",getSelectInventoryToShiftPage);
 
 // ? POST METHODS
 router.post("/getInventoryList",getInventoryList);
@@ -56,6 +60,8 @@ router.post("/getBatchListByPID_IID",getBatchListByPID_IID);
 router.post("/addToShiftingCart",addToShiftingCart);
 router.post("/addToMarketPlace",addToMarketPlace);
 router.post("/getShiftingCartInfo",getShiftingCartInfo);
+router.post("/getAllInventoriesExceptOne",getAllInventoriesExceptOne);
+router.post("/shiftToOtherInventory",shiftToOtherInventory);
 
 
 

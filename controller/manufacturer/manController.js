@@ -338,6 +338,37 @@ async function getShiftingCartInfo(req,res){
             sql
         );
         
+        //console.log(result);
+        const userObj = {
+            rows: result.rows, 
+        }
+        res.status(200);
+        res.json(userObj);
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
+
+
+//* Select Inventory To Shift Page
+function getSelectInventoryToShiftPage(req,res){
+    res.render("selectInventoryToShift.ejs");
+}
+
+
+
+//* Get all inventories and address except one
+async function getAllInventoriesExceptOne(req,res){
+    const sql = `SELECT *
+    FROM "Inventory", "Address"
+    WHERE "Inventory".mid = ${req.body.mid} and "Address".rmish_id = "Inventory".iid and "Inventory".iid <> ${req.body.iid};`;
+    try{
+        const result = await itemsPool.query(
+            sql
+        );
+        
         console.log(result);
         const userObj = {
             rows: result.rows, 
@@ -352,6 +383,41 @@ async function getShiftingCartInfo(req,res){
 
 
 
+
+//* Shift to new inventory
+//* Update New Inventory(for each bid)
+//* Delete All Entries of Inventory From a Shift Cart
+async function shiftToOtherInventory(req,res){
+    try{
+        for(let i=0; i<req.body.bidList.length; i++){
+            let sql = `UPDATE "Batch" SET "IID/HID" = ${req.body.toiid} WHERE bid = ${req.body.bidList[i]};`;
+            let result = await itemsPool.query(
+                sql
+            );
+        }
+
+        let sql = `DELETE FROM "ShiftCart" WHERE iid = ${req.body.fromiid};`;
+        let result = await itemsPool.query(
+            sql
+        );
+
+
+        sql = `UPDATE "Inventory" SET "Availability" = "Inventory"."Availability" + 3 WHERE iid = ${req.body.fromiid};`;
+        result = await itemsPool.query(
+            sql
+        );
+
+        sql = `UPDATE "Inventory" SET "Availability" = "Inventory"."Availability" - 3 WHERE iid = ${req.body.toiid};`;
+        result = await itemsPool.query(
+            sql
+        );
+        res.status(200).send("OK");
+       
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
 
 //* Export 
 module.exports = {
@@ -373,4 +439,7 @@ module.exports = {
     addToMarketPlace,
     getShiftingCartPage,
     getShiftingCartInfo,
+    getSelectInventoryToShiftPage,
+    getAllInventoriesExceptOne,
+    shiftToOtherInventory
 };

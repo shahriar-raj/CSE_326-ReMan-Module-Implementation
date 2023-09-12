@@ -27,7 +27,7 @@ async function initList(){
                     alt="" width="70" class="img-fluid rounded shadow-sm">
                 <div class="ml-3 d-inline-block align-middle">
                     <h5 class="mb-0"> <a href="#"
-                            class="text-dark d-inline-block align-middle">Batch No : xyz
+                            class="text-dark d-inline-block align-middle">Batch No : ${result.rows[i].bid}
                         </a></h5>
                     <span class="text-muted font-weight-normal font-italic d-block">
                         Product: ${result.rows[i].Name}
@@ -98,6 +98,7 @@ function remove(element){
 function confirmShift(){
     let myListString = JSON.stringify(bidList);
     localStorage.setItem('bidList', myListString);
+    window.location.replace(`${link1}/manufacturer/getSelectInventoryToShiftPage`);
 }
 
 
@@ -165,7 +166,7 @@ async function init(){
                 alt="" width="70" class="img-fluid rounded shadow-sm">
             <div class="ml-3 d-inline-block align-middle">
                 <h5 class="mb-0"> <a href="#"
-                        class="text-dark d-inline-block align-middle">Batch No : xyz
+                        class="text-dark d-inline-block align-middle">Batch No : ${result.rows[i].bid}
                     </a></h5>
                 <span class="text-muted font-weight-normal font-italic d-block">
                     Product: ${result.rows[i].Name}
