@@ -24,7 +24,9 @@ const {getManHomePage,
     getShiftingCartInfo,
     getSelectInventoryToShiftPage,
     getAllInventoriesExceptOne,
-    shiftToOtherInventory
+    shiftToOtherInventory,
+    getInventoryAddPage,
+    addInventory
     } = require("../../controller/manufacturer/manController");
 
 
@@ -45,6 +47,8 @@ router.get("/getSingleInventoryView",getSingleInventoryViewPage);
 router.get("/getBatchListPage",getBatchListPage);
 router.get("/getShiftingCartPage",getShiftingCartPage);
 router.get("/getSelectInventoryToShiftPage",getSelectInventoryToShiftPage);
+router.get("/getInventoryAddPage",getInventoryAddPage);
+
 
 // ? POST METHODS
 router.post("/getInventoryList",getInventoryList);
@@ -62,6 +66,7 @@ router.post("/addToMarketPlace",addToMarketPlace);
 router.post("/getShiftingCartInfo",getShiftingCartInfo);
 router.post("/getAllInventoriesExceptOne",getAllInventoriesExceptOne);
 router.post("/shiftToOtherInventory",shiftToOtherInventory);
+router.post("/addInventory",addInventory);
 
 
 

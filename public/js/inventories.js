@@ -12,6 +12,10 @@ async function clickedOnInventory(button){
 }
 
 
+function addInventory(){
+    window.location.replace(`${link1}/manufacturer/getInventoryAddPage`);
+}
+
 
 async function logout(){
     // http://localhost:4201

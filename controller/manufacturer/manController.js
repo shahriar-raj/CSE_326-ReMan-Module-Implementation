@@ -419,6 +419,50 @@ async function shiftToOtherInventory(req,res){
     }
 }
 
+
+
+//* Get Inventory Add Page
+function getInventoryAddPage(req,res){
+    res.render("addInventory.ejs");
+}
+
+
+//* Add Inventory
+async function addInventory(req,res){
+    try{
+
+        let sql = `INSERT INTO "Inventory" ("iid", "mid", "Size", "Type", "Owned", "Availability", "Name")
+        VALUES (nextval('inventory_id_seq'), ${req.body.mid}, ${req.body.capacity}, '${req.body.inventory}', true, 100, '${req.body.name}');`;
+        let result = await itemsPool.query(
+            sql
+        );
+
+
+        sql = `SELECT max(iid) AS "CurID" FROM "Inventory";`;
+        result = await itemsPool.query(
+            sql
+        );
+
+        sql = `INSERT INTO "Address" (rmish_id, "HouseNumber", "Street", zip, "City", "Division")
+        VALUES (${result.rows[0].CurID}, '${req.body.house}', '${req.body.street}', ${req.body.zip}, '${req.body.city}', '${req.body.district}');
+        
+        
+        `;
+        result = await itemsPool.query(
+            sql
+        );
+        res.status(200).send("OK");
+       
+    } catch(error){
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}
+
+
+
+
+
 //* Export 
 module.exports = {
     getManHomePage,
@@ -441,5 +485,7 @@ module.exports = {
     getShiftingCartInfo,
     getSelectInventoryToShiftPage,
     getAllInventoriesExceptOne,
-    shiftToOtherInventory
+    shiftToOtherInventory,
+    getInventoryAddPage,
+    addInventory
 };

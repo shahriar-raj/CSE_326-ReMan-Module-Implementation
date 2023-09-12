@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>ReMan-AddInventory</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="Man_Home.css">
+    <link rel="stylesheet" type="text/css" href="addInventory.css">
+
+
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus'></i>
+            <span class="logo_name">
+                <a href="/" class="logo" target="_blank">
+                    <img src="images/logo.jpg" alt="" height="115px">
+                </a>
+            </span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/player">
+                    <i class='bx bx-box'></i>
+                    <span class=""></span>
+                </a>
+            </li>
+            <li>
+                <a href="/manufacturer/home">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/notification">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Notification</span>
+                </a>
+            </li>
+            <li>
+                <a href="/transaction">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Transaction History</span>
+                </a>
+            </li>
+            <li>
+                <a href="/manufacturer/showInventory" class="active">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Inventory</span>
+                </a>
+            </li>
+            <li>
+                <a href="/productionHouse">
+                    <i class='bx bx-coin-stack' class="active"></i>
+                    <span class="links_name">Production House</span>
+                </a>
+            </li>
+            <li>
+                <a href="/productList ">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Product List</span>
+                </a>
+            </li>
+            <li>
+                <a href="/dataAnalytics">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Data Analytics</span>
+                </a>
+            </li>
+
+            <li> </li>
+            <li> </li>
+            <li> </li>
+
+            <li class="profile_img">
+                <div class="profile-details">
+                    <img id="logoImage" src="images/pepsi.jpg" alt="" width="100px">
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <p id="profile_name">P E P S I</p>
+            </li>
+
+
+            <li class="log_out">
+                <a href="/">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <section class="home-section">
+        <div>
+            <div>
+                <nav>
+                    <div class="sidebar-button">
+                        <i class='bx bx-menu sidebarBtn'></i>
+                        <span class="dashboard text-muted">Dashboard > Inventory > <span
+                                style="color: #E71385; font-weight: bold;"> Add Inventory</span></span>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="jumbotron jumbotron-fluid" id="jumbo-2">
+                <p style=" color: #FFFFFF;">.</p>
+
+
+                <div id="main-wrapper" class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-12">
+                            <div class="card border-0">
+                                <div class="card-body p-0">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-6">
+                                            <div class="p-5">
+                                                <div class="mb-5" class="pip">
+                                                    <h3 class="h4 font-weight-bold text-theme">Add Inventory</h3>
+                                                </div>
+
+                                                <form>
+                                                    <div class="form-group">
+                                                        <h4><label for="name" style="color: #E71385;">Inventory
+                                                                Name</label></h4>
+
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Enter your inventory name here" id="1"
+                                                            required />
+                                                    </div>
+                                                    <div class="form-group">
+
+                                                        <h4 style="color: #E71385;">Location</h4>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="city">City</label>
+                                                        <input type="text" class="form-control" id="2" required />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="district">District</label>
+                                                        <input type="text" class="form-control" id="3" required />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="house">House No</label>
+                                                        <input type="number" class="form-control" id="4" required
+                                                            required min="1" max="1000" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="street">Street No</label>
+                                                        <input type="number" class="form-control" id="5" required
+                                                            required min="1" max="1000" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="zip">Zip Code</label>
+                                                        <input type="number" class="form-control" id="6" required
+                                                            required min="1" max="1000" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inventory">Inventory Type</label>
+                                                        <input type="text" class="form-control" id="7" required required
+                                                            min="1" max="1000" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="capacity">Capacity</label>
+                                                        <input type="number" class="form-control" id="8" required
+                                                            required min="1" max="1000" />
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-theme"
+                                                        id="submit">Register</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 d-none d-lg-inline-block">
+                                            <div class="account-block rounded-right">
+
+
+                                                <div class="image-container">
+                                                    <img src="images/inventoryAdd.jpg" alt="Description of Image"
+                                                        class="image-size">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card-body -->
+                            </div>
+                            <!-- end card -->
+
+                            <!-- end row -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- Row -->
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script> -->
+
+
+    <!--  -->
+
+
+
+    <!--  -->
+
+
+    <!-- <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+          const inputText = document.getElementById("inputText").value;
+          const containsNumbers = /\d/.test(inputText);
+    
+          if (containsNumbers) {
+            // Display an error message and prevent form submission
+            const inputTextElement = document.getElementById("inputText");
+            inputTextElement.classList.add("is-invalid");
+            event.preventDefault();
+          }
+        });
+      </script>
+      
+     -->
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+    <!-- Add this script to your HTML file at the end of the body section -->
+    <script>
+        // Function to send data as JSON to the server
+        // http://localhost:4201
+        // https://reman.onrender.com
+        var link1 = `https://reman.onrender.com`;
+        async function sendDataToServer(data) {
+            try {
+                console.log(data.name);
+                console.log(data.city);
+                console.log(data.district);
+                console.log(data.house);
+                console.log(data.street);
+                console.log(data.zip);
+                console.log(data.inventory);
+                console.log(data.capacity);
+                
+
+                const response = await fetch(`${link1}/manufacturer/addInventory`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    // Data sent successfully
+                    alert('Registration successful!');
+                    window.location.replace(`${link1}/manufacturer/showInventory`);
+                } else {
+                    // Handle server error or validation errors
+                    alert('Error sending data to the server.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while sending data.');
+            }
+        }
+
+        // Handle form submission
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Retrieve form data
+                const formData = {
+                    name: document.getElementById('1').value,
+                    city: document.getElementById('2').value,
+                    district: document.getElementById('3').value,
+                    house: document.getElementById('4').value,
+                    street: document.getElementById('5').value,
+                    zip: document.getElementById('6').value,
+                    inventory: document.getElementById('7').value,
+                    capacity: document.getElementById('8').value,
+                    mid: localStorage.getItem('mid'),
+                };
+
+                // Send the form data as JSON to the server
+                await sendDataToServer(formData);
+            });
+        });
+    </script>
+
+</body>
+
+
+
+
+</html>
