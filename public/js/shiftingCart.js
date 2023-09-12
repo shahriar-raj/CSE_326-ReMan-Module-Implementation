@@ -56,11 +56,11 @@ async function initList(){
         }
         else if(result.rows[i].BatchState == "Moderate"){
             str += `<td class="border-0 align-middle">
-            <div class="widget-26-job-category bg-soft-success rounded">
-                <i class="indicator bg-success"></i>
+            <div class="widget-26-job-category bg-soft-warning rounded">
+                <i class="indicator bg-warning"></i>
                 <i class="fa fa-solid fa-circle" style="color: #ffc107;"></i>
                 <span> </span>
-                <span> Fresh </span>
+                <span> Moderate </span>
             </div>
             </td>`;
         }
@@ -69,7 +69,7 @@ async function initList(){
             <div class="widget-26-job-category bg-soft-danger rounded">
                 <i class="indicator bg-danger"></i>
                 <i class="fa fa-solid fa-circle" style="color: #dc3545;"></i>
-                <span> Critial </span>
+                <span> Critical </span>
             </div>
             </td>`;
         }
@@ -195,11 +195,11 @@ async function init(){
     }
     else if(result.rows[i].BatchState == "Moderate"){
         str += `<td class="border-0 align-middle">
-        <div class="widget-26-job-category bg-soft-success rounded">
-            <i class="indicator bg-success"></i>
+        <div class="widget-26-job-category bg-soft-warning rounded">
+            <i class="indicator bg-warning"></i>
             <i class="fa fa-solid fa-circle" style="color: #ffc107;"></i>
             <span> </span>
-            <span> Fresh </span>
+            <span> Moderate </span>
         </div>
         </td>`;
     }
@@ -208,7 +208,7 @@ async function init(){
         <div class="widget-26-job-category bg-soft-danger rounded">
             <i class="indicator bg-danger"></i>
             <i class="fa fa-solid fa-circle" style="color: #dc3545;"></i>
-            <span> Critial </span>
+            <span> Critical </span>
         </div>
         </td>`;
     }
